@@ -13,11 +13,10 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 port = 65533
 
 # 存音乐的目录
-fileDir = '/Users/sparkle/Music/网易云音乐'  
+fileDir = '/usr/src/app/Music'
 
 # 实时转码需要依赖ffmpeg的路径 如果为空就不转码
-ffmpeg = 'ffmpeg'
-
+ffmpeg = '/usr/bin/ffmpeg'
 
 fileList = None
 fileIndex = 0
@@ -109,8 +108,6 @@ class meHandler(BaseHTTPRequestHandler):
             else:
                 self.send_response(404)
                 self.end_headers()
-
-
 
 if os.system("nslookup zyym.ie"):
     print('ERROR: 请将zyym.ie指向本机ip，否则小爱音箱可能无法访问')
